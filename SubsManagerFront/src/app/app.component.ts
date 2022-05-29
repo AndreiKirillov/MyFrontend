@@ -16,11 +16,7 @@ export interface Card{
 export class AppComponent {
   isToggled = true
 
-  subs:SubscriptionComponent[]=[
-    {serviceName: 'Yandex music', paymentDate: 'asd' , price: 200},
-    {serviceName: 'Youtube', paymentDate: 'safdsdf' , price: 200},
-    {serviceName: 'Ivi', paymentDate: 'sdfsdf', price: 300}
-  ]
+ 
 
   cards: Card[]=[
     {title: 'Card1', text:'It is card 1'},

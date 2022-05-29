@@ -1,25 +1,22 @@
-<div class="container">
-  <app-header></app-header>
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="#">Subscription Manager</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/login"> Login </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/subscriptions"> Subscriptions </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
 
-
-<app-menu></app-menu>
-<app-auth></app-auth>
-
-  <hr>
-  <button class="button" (click)="toggleCards()">Toggle cards</button>
-  <hr>
-
-  <!--<app-form></app-form>-->
-  <div *ngIf ="isToggled; else noCards">
-   <app-card
-    *ngFor="let itemCard of cards;let iter = index"
-    [card]="itemCard"
-    [card_index]="iter+1"
-   ></app-card>
-  </div>
-
-  <ng-template #noCards>
-    <p>Cards are hidden!</p>
-  </ng-template>
-
+<div class="content">
+  <router-outlet></router-outlet>
 </div>
