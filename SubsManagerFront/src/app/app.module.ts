@@ -5,15 +5,19 @@ import { FormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CardComponent } from './Card/card.component';
-import { FormComponent } from './form/form.component';
 import { HeaderComponent } from './header/header.component';
+import { AuthComponent } from './auth/auth.component';
+import { MenuComponent } from './menu/menu.component';
+import { SubscriptionComponent } from './subscription/subscription.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
-    FormComponent,
-    HeaderComponent
+    HeaderComponent,
+    AuthComponent,
+    MenuComponent,
+    SubscriptionComponent
   ],
   imports: [
     BrowserModule,
