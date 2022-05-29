@@ -1,21 +1,9 @@
-.sub{
-    padding: .5rem 1rem;
-    border: 4px dashed rgb(255, 111, 15);
-    margin-bottom: 1rem;
-    margin-right: 50%;
-
-   h2{
-    margin-bottom: .5rem;
-   }
-}
-
-.text{
-    font-size: 12pt;
-
-    &.red{
-        color:red
+.card {
+    margin-bottom: 10px;
+    img {
+      margin: 10px;
+      height: 100px;
+      width: 100px;
+      border-radius: 10px;
     }
-    &.green{
-        color:green
-    }
-}
+  }

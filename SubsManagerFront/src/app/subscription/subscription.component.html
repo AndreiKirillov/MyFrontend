@@ -1,7 +1,12 @@
-<div class="sub">
-    <h3>Сервис: {{serviceName}})</h3>
-
-    <p class="text">Дата следующего списания: {{paymentDate | date}}</p>
-    <p class="text">Цена: {{price}}</p>
-</div>
+<div class="d-flex flex-column">
+    <div class="card" *ngFor="let item of list">
+      <img [src]="item.strDrinkThumb"
+           class="card-img-top" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"> {{item.strDrink}} </h5>
+        <p class="card-text"> {{item.strInstructions}} </p>
+        <button class="btn btn-primary"> delete </button>
+      </div>
+    </div>
+  </div>
 

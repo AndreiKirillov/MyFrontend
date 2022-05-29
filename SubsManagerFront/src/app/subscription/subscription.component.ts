@@ -9,14 +9,18 @@ export class SubscriptionComponent implements OnInit {
 
   constructor() {
     
-   }
+  }
+
+  public list: any[] = [];
 
   serviceName:string
   paymentDate: string//Date = new Date()
   price:number
 
-
   ngOnInit(): void {
   }
 
+  DeleteSubscription(id:number):void{
+
+  }
 }
