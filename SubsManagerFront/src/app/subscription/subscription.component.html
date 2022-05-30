@@ -1,11 +1,10 @@
 <div class="d-flex flex-column">
     <div class="card" *ngFor="let item of subsList">
-      <img [src]="item.strDrinkThumb"
-           class="card-img-top" alt="Card image cap">
       <div class="card-body">
-        <h5 class="card-title"> {{item.strDrink}} </h5>
-        <p class="card-text"> {{item.strInstructions}} </p>
-        <button class="btn btn-primary" (click)="DeleteSubscription(item.idDrink)"> delete </button>
+        <h5 class="card-title">Подписка на {{item.serviceName}} </h5>
+        <p class="card-text">До {{item.paymentDate}} </p>
+        <p class="card-text">Цена {{item.price}} </p>
+        <button class="btn btn-primary" (click)="DeleteSubscription(item.id)"> Delete </button>
       </div>
     </div>
   </div>

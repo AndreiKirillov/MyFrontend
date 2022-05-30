@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth/auth.service';
 import { DoRequest } from '../functions/serverRequests';
 
 @Component({
@@ -8,7 +9,7 @@ import { DoRequest } from '../functions/serverRequests';
 })
 export class SubscriptionComponent implements OnInit {
 
-  constructor() {
+  constructor(private authService:AuthService) {
     
   }
 
@@ -19,17 +20,17 @@ export class SubscriptionComponent implements OnInit {
   }
 
   public async GetSubscriptionsFromServer():Promise<void>{
-    const url = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a';
-    const res = await DoRequest(url)
+    const url = 'https://localhost:5001/api/Subscriptions';
+    const res = await DoRequest(url, 'GET', this.authService.token)
     if (res !== null) {
-      this.subsList = res.drinks;
+      this.subsList = await res.json();
       console.log(this.subsList);
     }
   }
 
   DeleteSubscription(id:number):void{
     this.subsList.forEach((element,index)=>{
-      if(element.idDrink==id) delete this.subsList[index];
+      if(element.id==id) delete this.subsList[index];
    });
    
   }

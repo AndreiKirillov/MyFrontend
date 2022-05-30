@@ -2,12 +2,14 @@
 export async function DoRequest(
     url: string,
     method = 'GET',
+    token: string = '',
     body: any = null): Promise<any> 
     {
     const options: any = {
       method: method,
       headers: {
-         'Content-Type': 'application/json;charset=utf-8'
+         'Content-Type': 'application/json;charset=utf-8',
+         'Authorization': 'Bearer '+ token
       },
     };
     if (body !== null) {

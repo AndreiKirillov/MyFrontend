@@ -13,10 +13,10 @@ export class AuthService {
 
   public async login(login: string, password: string, email:string): Promise<void> {
     const body = { login, password, email };
-    const res = await DoRequest('https://localhost:5001/api/Auth/login', 'POST', JSON.stringify(body));
+    const res = await DoRequest('https://localhost:5001/api/Auth/login', 'POST', '',JSON.stringify(body));
     if(res !==null){
         this.isAuth = true;
-        this.token = res;
+        this.token = await res.text();
         console.log('auth is done');
     }
     else{
