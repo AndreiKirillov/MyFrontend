@@ -17,6 +17,6 @@ export class LoginPageComponent implements OnInit {
   }
 
   public auth(): void {
-    this.authService.login(this.login, this.email, this.password);
+    this.authService.login(this.login, this.password, this.email);
   }
 }

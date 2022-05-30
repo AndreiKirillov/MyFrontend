@@ -9,12 +9,14 @@ import { HeaderComponent } from './header/header.component';
 import { SubscriptionComponent } from './subscription/subscription.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { AuthGuard } from './auth/auth.guard';
 
 const appRoutes: Routes =[
   { path: 'login', component: LoginPageComponent },
   {
     path: 'subscriptions',
     component: SubscriptionComponent,
+    canActivate: [AuthGuard]
   },
   { path: '**', component: NotFoundComponent }
 ];
@@ -34,7 +36,7 @@ const appRoutes: Routes =[
     RouterModule.forRoot(appRoutes),
     FormsModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
