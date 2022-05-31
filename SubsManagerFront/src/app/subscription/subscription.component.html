@@ -1,10 +1,10 @@
 <div class="d-flex flex-column">
-    <div class="card" *ngFor="let item of subsList">
+    <div class="card" *ngFor="let item of subsList; let i = index">
       <div class="card-body">
-        <h5 class="card-title">Подписка на {{item.serviceName}} </h5>
-        <p class="card-text">До {{item.paymentDate}} </p>
-        <p class="card-text">Цена {{item.price}} </p>
-        <button class="btn btn-primary" (click)="DeleteSubscription(item.id)"> Delete </button>
+        <h5 class="card-title">{{i+1}}) {{item.serviceName}} </h5>
+        <p class="card-text">Дата окончания: {{item.paymentDate}} </p>
+        <p class="card-text">Цена: {{item.price}} </p>
+        <button class="btn btn-primary" (click)="DeleteSubscription(item.id)"> Удалить </button>
       </div>
     </div>
   </div>

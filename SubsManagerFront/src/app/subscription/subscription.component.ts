@@ -28,6 +28,10 @@ export class SubscriptionComponent implements OnInit {
     }
   }
 
+  AddNewSubscription():void{
+    
+  }
+
   DeleteSubscription(id:number):void{
     this.subsList.forEach((element,index)=>{
       if(element.id==id) delete this.subsList[index];
