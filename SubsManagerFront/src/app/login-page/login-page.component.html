@@ -6,19 +6,19 @@
             <!-- Login input -->
             <div class="form-outline mb-4">
                 <input type="login" id="form2Example0" class="form-control" name="login" [(ngModel)]="login">
-                <label class="form-label" for="form2Example1" style="margin-left: 0;">Login</label>
+                <label class="form-label" for="form2Example1" style="margin-left: 0;">Логин</label>
                 <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 88.8px;"></div><div class="form-notch-trailing"></div></div></div>
 
         <!-- Password input -->
         <div class="form-outline mb-4">
             <input type="password" id="form2Example2" class="form-control" name="password" [(ngModel)]="password">
-            <label class="form-label" for="form2Example2" style="margin-left: 0;">Password</label>
+            <label class="form-label" for="form2Example2" style="margin-left: 0;">Пароль</label>
             <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 64px;"></div><div class="form-notch-trailing"></div></div></div>
 
           <!-- Email input -->
           <div class="form-outline mb-4">
             <input type="email" id="form2Example1" class="form-control" name="email" [(ngModel)]="email">
-            <label class="form-label" for="form2Example1" style="margin-left: 0;">Email address</label>
+            <label class="form-label" for="form2Example1" style="margin-left: 0;">Email</label>
             <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 88.8px;"></div><div class="form-notch-trailing"></div></div></div>
   
           <!-- 2 column grid layout for inline styling -->
@@ -27,17 +27,17 @@
               <!-- Checkbox -->
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked="">
-                <label class="form-check-label" for="form2Example31"> Remember me </label>
+                <label class="form-check-label" for="form2Example31"> Запомнить </label>
               </div>
             </div>
             <!-- Submit button -->
-            <button type="button" class="btn btn-primary btn-block mb-4" (click)="auth()">Sign in</button>
+            <button type="button" class="btn btn-primary btn-block mb-4" (click)="auth()">Войти</button>
           </div>
   
   
           <!-- Register buttons -->
           <div class="text-center">
-            <p>Not a member? <a href="#!">Register</a></p>
+            <p>Нет аккаунта? <a href="/registration">Зарегистрироваться</a></p>
           </div>
         </form>
       </section>

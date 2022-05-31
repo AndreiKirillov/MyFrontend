@@ -19,9 +19,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { MatInputModule } from '@angular/material/input';
+import { RegistrationComponent } from './registration/registration.component';
 
 const appRoutes: Routes =[
   { path: 'login', component: LoginPageComponent },
+  { path: 'registration', component: RegistrationComponent },
   {
     path: 'subscriptions',
     component: SubscriptionComponent,
@@ -42,7 +44,8 @@ const appRoutes: Routes =[
     SubscriptionComponent,
     LoginPageComponent,
     NotFoundComponent,
-    AddSubComponent
+    AddSubComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,

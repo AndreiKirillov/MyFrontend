@@ -24,6 +24,18 @@ export class AuthService {
     }
   }
 
+  public async register(login: string, password: string, email:string):Promise<void>{
+    const body = { login, password, email };
+    const res = await DoRequest('https://localhost:5001/api/Auth/registration', 'POST', '',JSON.stringify(body));
+    if(res !==null){
+      console.log('You have registered');
+      this.login(login, password, email);
+    }
+    else{
+      alert('Registration failed!');
+    }
+  }
+
   public logout(): void {
     this.isAuth = false;
     this.token = '';

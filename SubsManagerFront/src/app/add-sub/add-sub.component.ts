@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth/auth.service';
 import { DoRequest } from "../functions/serverRequests";
-import { DatePipe } from '@angular/common';
 
 import * as _moment from 'moment';
 const moment = _moment;
@@ -18,7 +17,6 @@ export class AddSubComponent implements OnInit {
 
   constructor(
     private authService:AuthService,
-    private datePipe: DatePipe
     ) { }
 
   ngOnInit(): void {
@@ -34,7 +32,7 @@ export class AddSubComponent implements OnInit {
       const body = {serviceName, paymentDate, price} ;
 
       const url = 'https://localhost:5001/api/Subscriptions/add';
-      
+
       const result = await DoRequest(url, 'POST', this.authService.token, JSON.stringify(body));
       if(result === null)
         alert('Error! Subscription was not added');
