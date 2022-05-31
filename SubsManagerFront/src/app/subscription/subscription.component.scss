@@ -1,13 +1,25 @@
 .card {
-    margin-bottom: 10px;
-    img {
-      margin: 10px;
-      height: 100px;
-      width: 100px;
-      border-radius: 10px;
-    }
+  margin-bottom: 10px;
+  img {
+    margin: 10px;
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
   }
+}
 
-  button{
-    background-color: red;
-  }
+button{
+  margin-right: 15px;
+}
+
+.btn.btn-primary.pay{
+  background-color: green;
+}
+
+.btn.btn-primary.change{
+  background-color: blue;
+}
+
+.btn.btn-primary.delete{
+  background-color: red;
+}

@@ -28,14 +28,29 @@ export class SubscriptionComponent implements OnInit {
     }
   }
 
-  AddNewSubscription():void{
-    
+  public async PaySubscription(id:number):Promise<void>{
+    const url = 'https://localhost:5001/api/Subscriptions/pay/'+id;
+    const res = await DoRequest(url, 'PUT', this.authService.token)
+    if (res !== null) {
+      console.log('Subscription was payed');
+      this.GetSubscriptionsFromServer().then();
+    }
+    else{
+      alert('Error happened');
+    }
   }
 
-  DeleteSubscription(id:number):void{
-    this.subsList.forEach((element,index)=>{
-      if(element.id==id) delete this.subsList[index];
-   });
+
+  public async DeleteSubscription(id:number):Promise<void>{
+    const url = 'https://localhost:5001/api/Subscriptions/delete/'+id;
+    const res = await DoRequest(url, 'DELETE', this.authService.token);
+    if (res !== null) {
+      console.log('Subscription was deleted');
+      this.GetSubscriptionsFromServer().then();
+    }
+    else{
+      alert('Error happened');
+    }
    
   }
 }
