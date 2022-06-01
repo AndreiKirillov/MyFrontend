@@ -24,6 +24,7 @@ export class SubscriptionComponent implements OnInit {
     const res = await DoRequest(url, 'GET', this.authService.token)
     if (res !== null) {
       this.subsList = await res.json();
+      this.subsList.sort((a,b) => (a.price < b.price) ? 1 :-1);
       console.log(this.subsList);
     }
   }
