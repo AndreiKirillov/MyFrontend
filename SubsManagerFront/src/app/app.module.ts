@@ -6,7 +6,6 @@ import { DatePipe } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
 import { SubscriptionComponent } from './subscription/subscription.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -20,8 +19,10 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { MatInputModule } from '@angular/material/input';
 import { RegistrationComponent } from './registration/registration.component';
+import { MainPageComponent } from './main-page/main-page.component';
 
 const appRoutes: Routes =[
+  { path: 'home', component: MainPageComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'registration', component: RegistrationComponent },
   {
@@ -40,12 +41,12 @@ const appRoutes: Routes =[
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     SubscriptionComponent,
     LoginPageComponent,
     NotFoundComponent,
     AddSubComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,
