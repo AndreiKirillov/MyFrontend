@@ -8,16 +8,19 @@
   }
 }
 
+.card.green{
+  background-color: rgb(119, 219, 119);
+}
+.card.red{
+  background-color: rgb(249, 132, 132);
+}
+
 button{
   margin-right: 15px;
 }
 
 .btn.btn-primary.pay{
   background-color: green;
-}
-
-.btn.btn-primary.change{
-  background-color: blue;
 }
 
 .btn.btn-primary.delete{

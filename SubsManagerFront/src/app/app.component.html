@@ -1,6 +1,6 @@
 <header>
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" routerLink="/home">Subscription Manager</a>
+      <a class="navbar-brand" routerLink="/home">Subscription Manager</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -14,21 +14,34 @@
         </li>
       </ul>
     </div>
-    <ul class="navbar-nav ml-auto">
-      <div class="log-in">
-        <li class="nav-item active">
-          <a class="nav-link" routerLink="/login"> Вход </a>
-        </li>
-      </div>
-      <div class="registration">
-        <li class="nav-item active">
-          <a class="nav-link" routerLink="/registration"> Регистрация </a>
-        </li>
-      </div>
+    <div *ngIf="!isAuth();else logout">
+      <ul class="navbar-nav ml-auto">
+        <div class="log-in">
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="/login"> Вход </a>
+          </li>
+        </div>
+
+        <div class="registration">
+         <li class="nav-item active">
+            <a class="nav-link" routerLink="/registration"> Регистрация </a>
+          </li>
+        </div>
     </ul>
+  </div>
   </nav>
 </header>
 
 <div class="content">
   <router-outlet></router-outlet>
 </div>
+
+<ng-template #logout>
+  <ul class="navbar-nav ml-auto">
+    <div class="registration">
+     <li class="nav-item active">
+        <button type="button" class="btn btn-primary btn-lg" (click)="log_out()"> Выйти </button>
+      </li>
+    </div>
+</ul>
+</ng-template>

@@ -29,7 +29,7 @@ export class AuthService {
     const res = await DoRequest('https://localhost:5001/api/Auth/registration', 'POST', '',JSON.stringify(body));
     if(res !==null){
       console.log('You have registered');
-      this.login(login, password, email);
+      const auth_res = await this.login(login, password, email);
     }
     else{
       alert('Registration failed!');

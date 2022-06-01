@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '../auth/auth.service';
 
 @Component({
@@ -12,7 +13,8 @@ export class RegistrationComponent implements OnInit {
   public password: string = '';
   public repeatPassword: string = '';
 
-  constructor(private authService:AuthService) { }
+  constructor(private authService:AuthService,
+    private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -21,7 +23,16 @@ export class RegistrationComponent implements OnInit {
     if(this.password !== this.repeatPassword)
       alert('Repeat the password!');
     else{
-      this.authService.register(this.login, this.password, this.email);
+      if(this.login !== '' && this.email !== '' && this.password.length >7){
+        const res = await this.authService.register(this.login, this.password, this.email);
+        if(res!==null){
+          this.router.navigate(['home']);
+        }
+
+      }
+      else{
+        alert('Введите данные');
+      }
     }
   }
 

@@ -1,5 +1,7 @@
 import { NodeWithI18n } from '@angular/compiler';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from './auth/auth.service';
 
 
 @Component({
@@ -8,5 +10,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  constructor(public authService:AuthService,
+    private router:Router) {
+    
+  }
 
+  public isAuth():boolean{
+    return this.authService.isAuth;
+  }
+
+  public log_out():void{
+    this.authService.logout();
+    this.router.navigate(['home'])
+  }
 }

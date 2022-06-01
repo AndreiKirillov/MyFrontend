@@ -1,14 +1,17 @@
 <div class="d-flex flex-column">
   <h1 class="text-center ">Ваши подписки</h1>
-    <div class="card" *ngFor="let item of subsList; let i = index">
-      <div class="card-body">
-        <h5 class="card-title">{{i+1}}) {{item.serviceName}} </h5>
-        <p class="card-text">Дата окончания: {{item.paymentDate}} </p>
-        <p class="card-text">Цена: {{item.price}} </p>
-        <button class="btn btn-primary pay" (click)="PaySubscription(item.id)"> Продлить </button>
-        <button class="btn btn-primary change" (click)="PaySubscription(item.id)"> Изменить </button>
-        <button class="btn btn-primary delete" (click)="DeleteSubscription(item.id)"> Удалить </button>
+      <div class="card" *ngFor="let item of subsList; let i = index">
+        <div class="card-body">
+          <h5 class="card-title">{{i+1}}) {{item.serviceName}} </h5>
+          <p class="card-text" [ngStyle]="{
+            color: isDebtSub(item.paymentDate)? 'red':'green'  
+          }">Дата окончания: {{item.paymentDate | date:'dd/MM/YYYY'}} </p>
+          <p class="card-text">Цена: {{item.price}} </p>
+          <button class="btn btn-primary pay" (click)="PaySubscription(item.id)"> Продлить </button>
+          <button class="btn btn-primary delete" (click)="DeleteSubscription(item.id)"> Удалить </button>
+       </div>
       </div>
-    </div>
-  </div>
+
+</div>
+
 

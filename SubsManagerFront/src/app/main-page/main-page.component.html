@@ -4,9 +4,15 @@
     <div class=" p-lg-5 mx-auto my-5">
       <h1 class="display-4 font-weight-normal">Добро пожаловать в Subscription Manager!</h1>
       <p class="lead font-weight-normal">Наше приложение поможет вам хранить подписки в одном месте</p>
-      <button class="btn btn-outline-secondary" routerLink="/registration">Начать</button>
+      <div *ngIf="!isAuth(); else another_link">
+        <button class="btn btn-outline-secondary" routerLink="/registration">Начать</button>
+      </div>
     </div>
     <div class="product-device box-shadow d-none d-md-block"></div>
     <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
   </div>
 </div>
+
+<ng-template #another_link>
+  <button class="btn btn-outline-secondary" routerLink="/subscriptions">Начать</button>
+</ng-template>

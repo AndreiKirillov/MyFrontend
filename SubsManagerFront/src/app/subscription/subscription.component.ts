@@ -24,7 +24,13 @@ export class SubscriptionComponent implements OnInit {
     const res = await DoRequest(url, 'GET', this.authService.token)
     if (res !== null) {
       this.subsList = await res.json();
-      this.subsList.sort((a,b) => (a.price < b.price) ? 1 :-1);
+
+      this.subsList.forEach(element => {
+        element.paymentDate = element.paymentDate.substring(0,10);
+        element.paymentDate = new Date(element.paymentDate);
+      });
+      this.subsList.sort((a,b) => (a.paymentDate > b.paymentDate) ? 1 :-1);
+      
       console.log(this.subsList);
     }
   }
@@ -54,4 +60,10 @@ export class SubscriptionComponent implements OnInit {
     }
    
   }
+
+  public isDebtSub(somedate:Date):boolean{
+    const now = new Date();
+    return somedate < now;
+  }
+
 }
